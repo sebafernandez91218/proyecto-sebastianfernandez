@@ -1,17 +1,22 @@
 import "./App.css";
-import { ChakraProvider } from "@chakra-ui/react";
-import CartWidget from "./components/CartWidget";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import { ChakraProvider } from "@chakra-ui/react";
+
+
+
 
 function App() {
   return (
     <>
       <ChakraProvider>
-        <CartWidget />
         <NavBar />
+      <ItemListContainer />
+      <ItemDetailContainer />
       </ChakraProvider>
-      <ItemListContainer greeting = "Bienvenidos a Daniela Joyas"/>
+  
+    
     </>
   );
 }

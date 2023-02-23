@@ -1,12 +1,23 @@
-import React from 'react'
+import {useState,useEffect} from 'react';
+import data from "../data.json";
+import ItemList from './ItemList';
+import {useParams} from "react-router-dom"
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
+  const{categoria}= useParams();
+  const catFilter = data.filter ((producto)=> producto.category
+=== categoria);
+
   return (
     <div>
-        <h1>{greeting}</h1>
-        
-    </div>
-  )
-}
+    <Center bg="#D6EAF8" h="100px" color="black">
+      <Heading as="h2" size="2xl">
+     Producto
+      </Heading>
+    </Center>
+    {categoria ? <ItemList producto={catFilter} /> : <ItemList producto={Data} />}
+  </div>
+); 
+};
 
 export default ItemListContainer
